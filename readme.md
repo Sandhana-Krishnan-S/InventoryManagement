@@ -1,4 +1,4 @@
-### ERP Inventory Console Application (Java + Maven + MySQL)
+### Retail Inventory System Console Application (Java + Maven + MySQL)
 
 A simple ERP-style Inventory Management System built with:
 
