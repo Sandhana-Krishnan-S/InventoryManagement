@@ -1,0 +1,53 @@
+
+# Maven target directory
+/target/
+
+# Logs
+*.log
+
+# Java class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IDE settings
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup / temp files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Nvim swap files
+*.swp
+*.swo
+
+# Java crash logs
+hs_err_pid*
+replay_pid*
+
+# Ignore Maven wrapper binaries (optional)
+.mvn/wrapper/maven-wrapper.jar
+
+# Ignore build artifacts
+*.orig
