@@ -30,6 +30,10 @@ public class PurchaseService {
             con.commit();
             System.out.println("Purchase recorded.");
         } catch (SQLException e) {
+            if(e.getMessage().equals("Product id " + id + " not found.")) {
+              System.out.println("Item with the id " + id + " does not exist. Please list the item before purchase");
+              return;
+            }
             if (con != null) try { con.rollback(); } catch (SQLException ignored) {}
             throw e;
         } finally {

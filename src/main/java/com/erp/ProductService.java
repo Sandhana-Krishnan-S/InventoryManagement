@@ -7,6 +7,22 @@ import java.sql.SQLException;
 
 public class ProductService {
 
+    public boolean doesProductExist(int id) {
+        Connection con = null;
+        PreparedStatement stmt = null;
+        try {
+          con = DB.getConnection();
+          stmt = con.prepareStatement("SELECT * FROM products WHERE id = ?");
+          stmt.setInt(1, id);
+          ResultSet rs = stmt.executeQuery();
+          if(rs.next()) return true;
+        } catch (Exception exception) {
+           System.out.println("Error: " + exception.getMessage());
+           exception.printStackTrace();
+        }
+        return false;
+    }
+
     public void addProduct(String name, double price, int qty) throws SQLException {
         Connection con = null;
         PreparedStatement stmt = null;
@@ -27,6 +43,7 @@ public class ProductService {
         }
     }
 
+
     public void listProducts() throws SQLException {
         Connection con = null;
         PreparedStatement stmt = null;
@@ -40,7 +57,7 @@ public class ProductService {
                 String name = rs.getString("name");
                 double price = rs.getDouble("price");
                 int qty = rs.getInt("quantity");
-                System.out.println(id + " | " + name + " | " + price + " | QTY: " + qty);
+                System.out.println(id + " | " + name + " | ₹" + price + " | QTY: " + qty);
             }
         } catch(Exception exception) {
 
