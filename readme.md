@@ -21,6 +21,8 @@ This project manages products, purchases, and sales with persistent storage in M
 3. Purchase Stock – increases quantity
 
 4. Sell Product – decreases quantity
+  
+5. Export Sales Report - csv file 
 
 Persistent storage using MySQL tables
 
